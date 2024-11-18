@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D64A777D2CEB80FC000C333B /* WorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A777C2CEB80FC000C333B /* WorkerTests.swift */; };
 		D67A35602CEAE8AC00DC04D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67A355F2CEAE8AC00DC04D4 /* Assets.xcassets */; };
 		D67A35632CEAE8AC00DC04D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67A35622CEAE8AC00DC04D4 /* Preview Assets.xcassets */; };
 		D67A35772CEAE8AC00DC04D4 /* RaboCSVReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A35762CEAE8AC00DC04D4 /* RaboCSVReaderUITests.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D64A777C2CEB80FC000C333B /* WorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTests.swift; sourceTree = "<group>"; };
 		D67A35582CEAE8AB00DC04D4 /* RaboCSVReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaboCSVReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67A355F2CEAE8AC00DC04D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67A35622CEAE8AC00DC04D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D64A777B2CEB80E1000C333B /* WorkerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D64A777C2CEB80FC000C333B /* WorkerTests.swift */,
+			);
+			path = WorkerTests;
+			sourceTree = "<group>";
+		};
 		D67A354F2CEAE8AB00DC04D4 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 		D67A356B2CEAE8AC00DC04D4 /* RaboCSVReaderTests */ = {
 			isa = PBXGroup;
 			children = (
+				D64A777B2CEB80E1000C333B /* WorkerTests */,
 				D67A35D12CEAE93700DC04D4 /* ParserTests */,
 				D67A35D62CEAE94700DC04D4 /* ViewModelTests */,
 			);
@@ -553,6 +564,7 @@
 				D67A35D42CEAE93700DC04D4 /* CSVFileReaderTests.swift in Sources */,
 				D67A35D32CEAE93700DC04D4 /* CSVFileParserTests.swift in Sources */,
 				D67A35D72CEAE94700DC04D4 /* CSVDataListViewModelTests.swift in Sources */,
+				D64A777D2CEB80FC000C333B /* WorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

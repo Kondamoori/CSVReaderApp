@@ -1,6 +1,6 @@
 //
-//  CSVDataListViewModelTests.swift
-//  RaboCSVReader
+//  WorkerTests.swift
+//  RaboCSVReaderTests
 //
 //  Created by Kondamoori, S. (Srinivasarao) on 18/11/2024.
 //
@@ -9,10 +9,9 @@ import XCTest
 import Combine
 @testable import RaboCSVReader
 
-
-final class CSVDataListViewModelTests: XCTestCase {
+final class WorkerTests: XCTestCase {
     
-    private var sut: CSVDataListViewModel!
+    private var sut: CSVWorker!
     private var cancellables: Set<AnyCancellable>!
     
     override func setUpWithError() throws {
@@ -27,27 +26,24 @@ final class CSVDataListViewModelTests: XCTestCase {
     }
     
     @MainActor
-    func testHappyFlowWithLoadingRecords() {
-        sut = CSVDataListViewModel(formatProvider: CSVFormats.semicolonDelimiter.format, csvFileName: "srini-example-csv-400K", recordSelection: { _ in })
+    func testSuccessCaseWithFetchRecords() throws {
+        sut = try CSVWorker(formatProvider: CSVFormats.semicolonDelimiter.format, csvFileName: "srini-example-csv-400K")
 
         let expectation = expectation(description: "test")
-        expectation.expectedFulfillmentCount = 1
-        sut.$state.sink { competion in
+        sut.$state.sink { _ in
         } receiveValue: { [weak self] state in
-            if state == .loaded {
-                XCTAssertTrue(self?.sut.csvData.records.count == 9)
+            if state == .loaded && self?.sut.records.count == 9 {
                 expectation.fulfill()
             }
         }.store(in: &cancellables)
-        
-        sut.loadRecords()
-        
+        try sut.fetchRecords()
+    
         wait(for: [expectation], timeout: 10.0)
     }
     
     @MainActor
-    func testViewModelStateChangesInErrorFlowWithWrongConfiguration() {
-        sut = CSVDataListViewModel(formatProvider: CSVFormats.semicolonDelimiter.format, csvFileName: "example-file-quotes", recordSelection: { _ in })
+    func testErrorFlowWithWrongConfiguration() throws {
+        sut = try CSVWorker(formatProvider: CSVFormats.semicolonDelimiter.format, csvFileName: "example-file-quotes")
 
         let expectation = expectation(description: "test")
         sut.$state.sink { competion in
@@ -55,13 +51,11 @@ final class CSVDataListViewModelTests: XCTestCase {
             guard case.error(let error) = value else {
                 return
             }
-            XCTAssertNotNil(error?.rawValue)
-            XCTAssertEqual(error?.rawValue, "Unable to parse field. Unexpected character: V failed at row: 1, column: 0")
-
+            XCTAssertNotNil(error.rawValue)
             expectation.fulfill()
         }.store(in: &cancellables)
         
-        sut.loadRecords()
+        try sut.fetchRecords()
     
         wait(for: [expectation], timeout: 10.0)
     }
