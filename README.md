@@ -6,11 +6,26 @@
 - Support CSV formats with configuration.
 - Detail screen with all the details of CSV Row.
 
+# Core Functionality: CSVFileParser Overview
+- The CSVFileParser is a robust solution for parsing large CSV files efficiently.
+- It employs a chunk-based processing mechanism to minimise memory usage and dynamically fetch data as required. This design is ideal for processing large datasets while maintaining optimal performance.
+- Dynamically fetches additional chunks of data when the remaining text falls below a threshold (default: 100 characters) and the requested row limit is unmet.
+
+# Memory Management
+- Removes processed chunks from memory to reduce the application's memory footprint.
+- Actively manages the in-memory state of the parser.
+
+# Event-Based Notifications
+- Publishes progress using Combine publishers.
+- RowsPublisher, Emits parsed rows as an array of strings.
+- ParsingPublisher, indicates the parser's current state (idle, parsing, finished)
+- Detects and reports parsing errors through Combine's completion handler.
+
 # Technical Design
-Used Xcode 16 & SwiftUI, Swift.
-No third party libraries are used.
-Used MVVM-C pattern (combination of the Model-View-ViewModel architecture, plus the Coordinator pattern), Swift UI, Combine declarative Swift API for processing values over time.
-XCTest for unit testing viewModels for business logic (FileLoading, File Parsing, Process records) of data.
+- Used Xcode 16 & SwiftUI, Swift.
+- No third party libraries are used.
+- Used MVVM-C pattern (combination of the Model-View-ViewModel architecture, plus the Coordinator pattern), Swift UI, Combine declarative Swift API for processing values over time.
+- XCTest for unit testing viewModels for business logic (FileLoading, File Parsing, Process records) of data.
 
 # High level overview of app flow. This will give details how app components perform.
 
@@ -20,7 +35,7 @@ XCTest for unit testing viewModels for business logic (FileLoading, File Parsing
 
 # MVP 2
  - Improve the UI with grid layout and bring excel feeling of viewing CSV.
- - Add support to different types of CSV files.
+ - Add support to different types of CSV file format.
  - Utilise FileHandler seekToOffset function to move back & forward on data chunk.
  - Remove elements from data source after certain limit, keep feeding values by moving on File both forward & backward direction.
  - See memory optimisation plus asynchronous handling
