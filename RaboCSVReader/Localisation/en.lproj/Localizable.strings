@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  RaboCSVReader
+
+  Created by Kondamoori, S. (Srinivasarao) on 18/11/2024.
+  
+*/
+
+"listSceneTitle" = "Records List";
+"error" = "Error";
+"ok" = "Ok";
+"cancel" = "Cancel";
+"emptyFile" = "Empty File";
+"recordsEmpty" = "Records empty";
+"genericErrorMessage" = "There seems to be some issue, please check input file.";
+"emptyRecordsInfoText" = "Empty Records, please check the file";
