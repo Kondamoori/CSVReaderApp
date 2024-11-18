@@ -6,11 +6,10 @@
 - Support CSV formats with configuration.
 - Detail screen with all the details of CSV Row.
 
-# Core Funcationliy. CSVFileParser Overview
+# Core Funcationliy: CSVFileParser Overview
 - The CSVFileParser is a robust solution for parsing large CSV files efficiently.
 - It employs a chunk-based processing mechanism to minimize memory usage and dynamically fetch data as required. This design is ideal for processing large datasets while maintaining optimal performance.
-- Automatically fetches additional chunks of data when the remaining text falls below a threshold (default: 100 characters) and the requested row limit is unmet.
-- Efficiently handles large files without loading the entire content into memory.
+- Dynamically fetches additional chunks of data when the remaining text falls below a threshold (default: 100 characters) and the requested row limit is unmet.
 
 # Memory Management
 - Removes processed chunks from memory to reduce the application's memory footprint.
