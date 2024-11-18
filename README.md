@@ -6,11 +6,27 @@
 - Support CSV formats with configuration.
 - Detail screen with all the details of CSV Row.
 
+# Core Funcationliy. CSVFileParser Overview
+- The CSVFileParser is a robust solution for parsing large CSV files efficiently.
+- It employs a chunk-based processing mechanism to minimize memory usage and dynamically fetch data as required. This design is ideal for processing large datasets while maintaining optimal performance.
+- Automatically fetches additional chunks of data when the remaining text falls below a threshold (default: 100 characters) and the requested row limit is unmet.
+- Efficiently handles large files without loading the entire content into memory.
+
+# Memory Management
+- Removes processed chunks from memory to reduce the application's memory footprint.
+- Actively manages the in-memory state of the parser.
+
+# Event-Based Notifications
+- Publishes progress using Combine publishers:
+- rowsPublisher: Emits parsed rows as an array of strings.
+- parsingPublisher: Indicates the parser's current state (idle, parsing, finished)
+- Detects and reports parsing errors through Combine's completion handler.
+- 
 # Technical Design
-Used Xcode 16 & SwiftUI, Swift.
-No third party libraries are used.
-Used MVVM-C pattern (combination of the Model-View-ViewModel architecture, plus the Coordinator pattern), Swift UI, Combine declarative Swift API for processing values over time.
-XCTest for unit testing viewModels for business logic (FileLoading, File Parsing, Process records) of data.
+- Used Xcode 16 & SwiftUI, Swift.
+- No third party libraries are used.
+- Used MVVM-C pattern (combination of the Model-View-ViewModel architecture, plus the Coordinator pattern), Swift UI, Combine declarative Swift API for processing values over time.
+- XCTest for unit testing viewModels for business logic (FileLoading, File Parsing, Process records) of data.
 
 # High level overview of app flow. This will give details how app components perform.
 
