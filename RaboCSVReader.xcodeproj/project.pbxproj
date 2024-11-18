@@ -40,6 +40,7 @@
 		D67A35D32CEAE93700DC04D4 /* CSVFileParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A35CF2CEAE93700DC04D4 /* CSVFileParserTests.swift */; };
 		D67A35D42CEAE93700DC04D4 /* CSVFileReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A35D02CEAE93700DC04D4 /* CSVFileReaderTests.swift */; };
 		D67A35D72CEAE94700DC04D4 /* CSVDataListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A35D52CEAE94700DC04D4 /* CSVDataListViewModelTests.swift */; };
+		D683EA8F2CEAF75A0075EEFE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D683EA8E2CEAF75A0075EEFE /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		D67A35D02CEAE93700DC04D4 /* CSVFileReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVFileReaderTests.swift; sourceTree = "<group>"; };
 		D67A35D52CEAE94700DC04D4 /* CSVDataListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVDataListViewModelTests.swift; sourceTree = "<group>"; };
 		D67A35D82CEAE96500DC04D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D683EA8E2CEAF75A0075EEFE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D67A355A2CEAE8AB00DC04D4 /* RaboCSVReader */,
+				D683EA8E2CEAF75A0075EEFE /* Launch Screen.storyboard */,
 				D67A356B2CEAE8AC00DC04D4 /* RaboCSVReaderTests */,
 				D67A35752CEAE8AC00DC04D4 /* RaboCSVReaderUITests */,
 				D67A35592CEAE8AB00DC04D4 /* Products */,
@@ -493,6 +496,7 @@
 				D67A359C2CEAE90600DC04D4 /* issues.csv in Resources */,
 				D67A35942CEAE8F500DC04D4 /* Localizable.strings in Resources */,
 				D67A35602CEAE8AC00DC04D4 /* Assets.xcassets in Resources */,
+				D683EA8F2CEAF75A0075EEFE /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,7 +723,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RaboCSVReader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -747,7 +751,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RaboCSVReader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
